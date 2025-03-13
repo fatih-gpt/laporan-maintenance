@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Maintenance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                margin: 0;
+            }
+            body {
+                margin: 0;
+                padding: 10px;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        
+        body {
+            font-size: 10px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+            padding: 3px;
+            border: 1px solid #dee2e6;
+        }
+        .table td:last-child {
+          word-wrap: break-word;
+          min-width: 100px;
+          padding: 5px;
+        }
+        .container {
+            max-width: 900px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            border: 1px solid #ced4da;
+            text-align: center;
+            padding: 3px;
+            font-size: 10px;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+        .header-text {
+            text-align: center;
+        }
+        .header-text h5, .header-text h6 {
+            margin: 2px 0;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="reportContent">
+        <div id="page1">
+            <div class="header">
+                <img src="image.png" alt="Company Logo" class="logo">
+                <div class="header-text">
+                    <h5>PT. EMITRACO INVESTAMA MANDIRI</h5>
+                    <h6>CONTAINER & CARGO HANDLING</h6>
+                    <h5>DAILY PREVENTIVE MAINTENANCE CHECK LIST</h5>
+                </div>
+            </div>
+            <p><strong>Date:</strong> <input type="text" id="date"></p>
+            <p><strong>Pump Hm:</strong> <input type="text"> <strong>Engine Hm:</strong> <input type="text"> <strong>Slewing Hm:</strong> <input type="text"> <strong>Hoist Hm:</strong> <input type="text"></p>
+            <table class="table table-bordered">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>No</th>
+                        <th>Item</th>
+                        <th>Task</th>
+                        <th>Code</th>
+                        <th>G</th>
+                        <th>FR</th>
+                        <th>FU</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-secondary">
+                        <td colspan="8"><strong>Under Carriage</strong></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Traveling gear</td>
+                        <td>Pemeriksaan visual untuk setiap kebocoran</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Propping cylinder</td>
+                        <td>Pemeriksaan visual untuk setiap kebocoran</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">3</td>
+                        <td rowspan="2">Tires</td>
+                        <td>Periksa kondisi permukaan karet</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Periksa ban untuk tekanan yang benar</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Lubrication Pump</td>
+                        <td>Periksa isi pompa pelumas isi ulang jika perlu</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td colspan="8"><strong>Engine Room</strong></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Fuel level</td>
+                        <td>Catat nilainya</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Diesel engine</td>
+                        <td>Periksa eksterior mesin dari kehilangan oli, bahan bakar, dan cairan pendingin</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Engine oil level</td>
+                        <td>Periksa level oli mesin</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Water separator</td>
+                        <td>Periksa separator air pada prefilter bahan bakar, tiriskan air</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Coolant</td>
+                        <td>Periksa level cairan pendingin, isi ulang jika perlu</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Battery master switch</td>
+                        <td>Pemeriksaan visual</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Air intake filters</td>
+                        <td>Cek indikator</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Vibration</td>
+                        <td>Dengarkan jika ada suara yang tidak normal</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Distribution gearbox</td>
+                        <td>Periksa level oli roda gigi</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td colspan="8"><strong>Slewing Platform</strong></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Hydraulic Oil Tank</td>
+                        <td>Periksa level oli hidrolik</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Slewing gears</td>
+                        <td>Periksa level oli roda gigi</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Hoisting gear</td>
+                        <td>Periksa level oli roda gigi</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Lubrication pump</td>
+                        <td>Periksa isi pompa pelumas, isi ulang jika perlu</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">18</td>
+                        <td rowspan="2">Wire ropes on drum</td>
+                        <td>Pemeriksaan visual untuk kerusakan apa pun</td>
+                        <td>S</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Periksa kondisi pelumasan</td>
+                        <td>S</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Emergency stop</td>
+                        <td>Dengan menyalakan kunci kontak dan mesin diesel berhenti, tombol berhenti darurat operator</td>
+                        <td>S</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td colspan="8"><strong>Operator Cabin</strong></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Function test</td>
+                        <td>Mengangkat sakelar batas gigi, mengangkat sakelar batas gigi naik di cincin slewing</td>
+                        <td>S</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Warning devices</td>
+                        <td>Periksa perangkat peringatan akustik</td>
+                        <td>S</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td colspan="8"><strong>Tower</strong></td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>Boom cylinders</td>
+                        <td>Pemeriksaan visual untuk setiap kebocoran</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Lubrication pump</td>
+                        <td>Periksa isi pompa pelumas, isi ulang jika perlu</td>
+                        <td>S/O</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 class="mt-4">Keterangan Maintenance</h5>
+            <textarea rows="4" placeholder="Masukkan keterangan maintenance di sini..."></textarea>
+            <h5 class="mt-4">Note:</h5>
+            <ul>
+                <li><strong>S</strong> = Check when the crane in stand by condition</li>
+                <li><strong>O</strong> = Do when the crane in operation and one day before operation</li>
+                <li><strong>G</strong> = Good / Baik</li>
+                <li><strong>FR</strong> = Fail and Repaired / Gagal dan diperbaiki</li>
+                <li><strong>FU</strong> = Fail and Unrepaired / Gagal dan tidak diperbaiki</li>
+            </ul>
+            <p><strong>Pengurus:</strong> <input type="text"></p>
+            <p><strong>Dikerjakan oleh:</strong> <input type="text"></p>
+        </div>
+        <div id="page2" class="page-break">
+            <div class="container-fluid mt-4">
+                <h5 class="text-center">SPREADER PREVENTIVE MAINTENANCE CHECK LIST</h5>
+                <p><strong>Spreader:</strong> <input type="text"></p>
+                <p><strong>Maintenance Name:</strong> <input type="text"></p>
+                <p><strong>Date:</strong> <input type="text"></p>
+                <p><strong>Time In:</strong> <input type="text"> <strong>Time Out:</strong> <input type="text"></p>
+                <table class="table table-bordered">
+                    <thead class="table-dark text-center">
+                        <tr>
+                            <th rowspan="2">Item</th>
+                            <th rowspan="2">Task</th>
+                            <th colspan="3" class="text-center">Result</th>
+                            <th rowspan="2">Keterangan</th>
+                        </tr>
+                        <tr>
+                            <th>G</th>
+                            <th>FR</th>
+                            <th>FU</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="11"><strong>Hydraulic System</strong></td>
+                            <td>Perhatikan flipper hose fitting, actuator (M1)</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa twistlock hose, fitting, cylinder</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa kondisi oli</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa ketinggian oli</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa manifold block</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa wearpads</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa kebocoran dan perbaikan</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa hydraulic gear pada rantai telescopic</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td></tr>
+                        <tr>
+                            <td>Periksa katup pengendali (control valve)</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa saringan oli</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa kondisi pompa hydraulic</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Flippers</td>
+                            <td>Periksa kondisi RHSS stopers & bracket flipper arm (bolts)</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Limit switch, proximity sensor</td>
+                            <td>Periksa semua komponen proximity</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">Twistlocks</td>
+                            <td>Periksa kondisi twistlock dan sistem penghubungnya</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa cynder twistlock</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa kondisi guide shoes</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa kondisi landing rods / plates</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="8">Structure</td>
+                            <td>Periksa adanya keretakan / crack dan perubahan bentuk</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa adanya kerusakan & hydraulic gear untuk rantai telescopic</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa kondisi mata pengait</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa keretakan pada loading plate ke headblock</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa dan ukur telescopic driving chain</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa tension rod</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa karet pelindung fliper</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa flexible coupling</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Elektrial work</td>
+                            <td>Periksa semua kondisi pengkabelan</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa junction box</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Periksa kondisi cable plug</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 class="mt-4">Note:</h5>
+                <ul>
+                    <li><strong>G</strong> = Good / Baik</li>
+                    <li><strong>FR</strong> = Fail and Repaired / Gagal dan diperbaiki</li>
+                    <li><strong>FU</strong> = Fail and Unrepaired / Gagal dan tidak diperbaiki</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <button onclick="window.print()" class="btn btn-primary no-print">Download PDF</button>
+</body>
+</html>
