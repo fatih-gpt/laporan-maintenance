@@ -376,6 +376,85 @@
             </ul>
             <p><strong>Pengurus:</strong> <input type="text"></p>
             <p><strong>Dikerjakan oleh:</strong> <input type="text"></p>
+            <h5 class="mt-4">Tanda Tangan:</h5>
+<canvas id="signature-pad" width="300" height="100" style="border:1px solid #000; background-color: #fff;"></canvas>
+<br>
+<button class="btn btn-danger no-print" onclick="clearSignature()">Hapus</button>
+
+<script>
+    var canvas = document.getElementById('signature-pad');
+    var ctx = canvas.getContext('2d');
+    var drawing = false;
+
+    // Pastikan menggunakan ukuran yang sesuai dengan resolusi
+    function resizeCanvas() {
+        var tempCanvas = document.createElement('canvas');
+        var tempCtx = tempCanvas.getContext('2d');
+
+        tempCanvas.width = canvas.width;
+        tempCanvas.height = canvas.height;
+        tempCtx.drawImage(canvas, 0, 0);
+
+        canvas.width = 300; // Atur ulang ukuran
+        canvas.height = 100;
+        ctx.drawImage(tempCanvas, 0, 0);
+    }
+
+    // Fungsi untuk mulai menggambar
+    function startDrawing(event) {
+        drawing = true;
+        ctx.beginPath();
+        ctx.moveTo(event.offsetX, event.offsetY);
+    }
+
+    // Fungsi untuk menggambar garis
+    function draw(event) {
+        if (!drawing) return;
+        ctx.lineTo(event.offsetX, event.offsetY);
+        ctx.stroke();
+    }
+
+    // Fungsi untuk berhenti menggambar
+    function stopDrawing() {
+        drawing = false;
+        ctx.closePath();
+    }
+
+    // Fungsi untuk menghapus tanda tangan
+    function clearSignature() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Event Listener untuk mouse
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseleave', stopDrawing);
+
+    // Event Listener untuk layar sentuh
+    canvas.addEventListener('touchstart', function(e) {
+        var touch = e.touches[0];
+        var rect = canvas.getBoundingClientRect();
+        ctx.beginPath();
+        ctx.moveTo(touch.clientX - rect.left, touch.clientY - rect.top);
+        drawing = true;
+    });
+
+    canvas.addEventListener('touchmove', function(e) {
+        if (!drawing) return;
+        var touch = e.touches[0];
+        var rect = canvas.getBoundingClientRect();
+        ctx.lineTo(touch.clientX - rect.left, touch.clientY - rect.top);
+        ctx.stroke();
+        e.preventDefault(); // Mencegah scroll saat menggambar di touch screen
+    });
+
+    canvas.addEventListener('touchend', function() {
+        drawing = false;
+        ctx.closePath();
+    });
+</script>
+
         </div>
         <div id="page2" class="page-break">
             <div class="container-fluid mt-4">
@@ -602,8 +681,6 @@
                         </tr>
                     </tbody>
                 </table>
-                 <h5 class="mt-4">Keterangan Maintenance</h5>
-            <textarea rows="4" placeholder="Masukkan keterangan maintenance di sini..."></textarea>
                 <h5 class="mt-4">Note:</h5>
                 <ul>
                     <li><strong>G</strong> = Good / Baik</li>
