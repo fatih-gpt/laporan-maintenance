@@ -72,6 +72,17 @@
             margin: 2px 0;
             white-space: nowrap;
         }
+         /* Watermark */
+         .watermark {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 15px;
+            font-weight: bold;
+            color: rgba(200, 200, 200, 0.5);
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
@@ -375,7 +386,7 @@
                 <li><strong>FU</strong> = Fail and Unrepaired / Gagal dan tidak diperbaiki</li>
             </ul>
             <p><strong>Pengurus:</strong> <input type="text"></p>
-            <p><strong>Dikerjakan oleh:</strong> <input type="text"></p>
+            <p><strong>Dikerjakan Oleh:</strong> <input type="text"> (Mekanik/Helper)</p>
             <h5 class="mt-4">Tanda Tangan:</h5>
 <canvas id="signature-pad" width="300" height="100" style="border:1px solid #000; background-color: #fff;"></canvas>
 <br>
@@ -691,5 +702,6 @@
         </div>
     </div>
     <button onclick="window.print()" class="btn btn-primary no-print">Download PDF</button>
+    <div class="watermark">Fatih_HMC</div>
 </body>
 </html>
